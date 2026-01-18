@@ -1,8 +1,9 @@
 import OpenAI from "openai"; // <- ADD THIS
+import connectDB from "@/lib/db";
 
 export async function POST(req) {
   const { code } = await req.json();
-
+  await connectDB(); // ✅ REQUIRED
   let improvedText = "";
   const client = new OpenAI({
     apiKey: process.env.GROQ_API_KEY,

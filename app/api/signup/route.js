@@ -3,9 +3,11 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import cookieParser from "cookie-parser";
 import { NextResponse } from "next/server";
+import connectDB from "@/lib/db";
 
 const secret = "MY_SUPER_SECRET_123";
 export async function POST(req) {
+  await connectDB(); // ✅ REQUIRED
   const { username, email, password } = await req.json();
   const exiting = await signup.findOne({ email });
   if (exiting)

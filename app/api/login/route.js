@@ -2,10 +2,12 @@ import { NextResponse } from "next/server";
 import userModel from "@/modules/signup";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import connectDB from "@/lib/db";
 
 const SECRET = "MY_SUPER_SECRET_123";
 
 export async function POST(req) {
+  await connectDB(); // ✅ REQUIRED
   const { email, password } = await req.json();
   const existing = await userModel.findOne({ email });
   if (!existing)

@@ -7,7 +7,7 @@ function initSocket(server) {
   const io = new Server(server, {
     const io = new Server(server, {
     cors: {
-      origin: ["http://localhost:3000", "https://codee-sync.vercel.app"],
+      origin: ["http://localhost:3000", "https://code-sync-2-jw1x.onrender.com"],
       methods: ["GET", "POST"],
     },
     transports: ["websocket"],

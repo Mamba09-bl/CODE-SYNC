@@ -16,7 +16,7 @@ const codeSchema = new mongoose.Schema(
       default: "javascript",
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 module.exports = mongoose.model("Code", codeSchema);

@@ -5,13 +5,11 @@ const roleModel = require("../modules/role");
 // const user = require("../modules/user");
 function initSocket(server) {
   const io = new Server(server, {
-    const io = new Server(server, {
     cors: {
-      origin: ["http://localhost:3000", "https://code-sync-2-jw1x.onrender.com"],
+      origin: "https://codee-sync.vercel.app",
       methods: ["GET", "POST"],
+      credentials: true,
     },
-    transports: ["websocket"],
-  });
     transports: ["websocket"],
   });
 

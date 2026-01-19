@@ -9,6 +9,7 @@ function initSocket(server) {
       origin: process.env.CLIENT_URL,
       methods: ["GET", "POST"],
     },
+    transports: ["websocket"],
   });
 
   let roomUsers = {};

@@ -1,7 +1,6 @@
 "use client";
 import { useParams, useRouter } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
-import { io } from "socket.io-client";
 import Editor from "@monaco-editor/react";
 import {
   MessageSquare,

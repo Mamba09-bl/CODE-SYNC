@@ -19,19 +19,15 @@
 
 const express = require("express");
 const http = require("http");
-const cors = require("cors");
 const initSocket = require("./socket");
 const connectDB = require("./lib/db");
 
 const app = express();
-app.use(cors());
-
 const server = http.createServer(app);
 
-// 🔥 START SERVER PROPERLY
 const startServer = async () => {
   try {
-    await connectDB(); // ✅ CONNECT ONCE
+    await connectDB();
     initSocket(server);
 
     const PORT = process.env.PORT || 5000;

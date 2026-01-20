@@ -4,14 +4,7 @@ const codeSave = require("../modules/code");
 const roleModel = require("../modules/role");
 // const user = require("../modules/user");
 function initSocket(server) {
-  const io = new Server(server, {
-    cors: {
-      origin: "https://codee-sync.vercel.app",
-      methods: ["GET", "POST"],
-      credentials: true,
-    },
-    transports: ["websocket"],
-  });
+  const io = new Server(server);
 
   let roomUsers = {};
 
